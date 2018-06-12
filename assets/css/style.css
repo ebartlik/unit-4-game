@@ -1,0 +1,62 @@
+
+ .images
+{
+    display: inline-block;
+    float:left;
+    margin: 0px;
+    padding: 0px;
+    width:25%;
+    position: relative;
+    top: 10px;
+    }
+header{
+    background:brown;
+    width: 25%;
+    height:70px;
+    font-size: 25pt;
+    color:white;
+}
+p{
+    background:beige;
+    width: 40%;
+    margin-top: 10px;
+    color: green;
+    font-size: 16pt;
+}
+
+#random{
+    background: green;
+    width: 30%;
+    height: 70px;
+   
+   
+
+}
+
+.wins-losses{
+    position: relative;
+    left: 265px;
+    bottom: 78px;
+    background: turquoise;
+    width: 10%;
+    height: 72px;
+   
+    
+}
+#wins{
+    font-size: 14pt;
+}
+
+#losses{
+    font-size: 14pt;
+}
+#score{
+    width: 15%;
+    margin-left: 15px;
+    margin-top: -50px;
+}
+#total{
+    background:beige;
+    height:72px;
+    width: 31.5%;
+}

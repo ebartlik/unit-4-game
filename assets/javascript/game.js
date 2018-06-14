@@ -12,7 +12,7 @@ $(document).ready(function () {
 
     //variable to store random computer chosen number
 
-    var randomNumber = [];
+    var randomNumber = 0;
 
     //variable to store computer chosen crystal1 value 
 
@@ -43,7 +43,7 @@ $(document).ready(function () {
 
 
 
-    randomNumber = Math.floor(Math.random() * 10);
+    randomNumber = Math.floor(Math.random() * 100);
     console.log(randomNumber);
     //assign computer random chosen number to random computer chosen number variable 
     $("#random").text(randomNumber); 
@@ -79,7 +79,9 @@ $(document).ready(function () {
         //add crystal 1 value to total points
         total = total + firstCrystal;
         console.log(total);
-
+        winner();
+        loser();
+        //checks for winner or loser function
         //print total to page
 
         $("#total").text(total);
@@ -94,7 +96,9 @@ $(document).ready(function () {
 
         total = total + secondCrystal;
         console.log(total);
-
+        winner();
+        loser();
+        //checks for winner or loser function
 
         //user clicks crystal 3
         //print total to page 
@@ -111,6 +115,10 @@ $(document).ready(function () {
         total = total + thirdCrystal;
         console.log(total);
 
+        winner();
+        loser();
+        //checks for winner or loser function
+
         //print total points to page
         $("#total").text(total);
     });
@@ -123,6 +131,10 @@ $(document).ready(function () {
         total = total + fourthCrystal;
         console.log(total);
 
+        winner();
+        loser();
+        //checks for winner or loser function
+
         //print total points to page
         $("#total").text(total);
 
@@ -132,25 +144,38 @@ $(document).ready(function () {
 
 
     function winner() {
-        alert("You win");
+        // alert("You win");
+        // winCounter++;
+        // $("#wins").text("Wins: " + winCounter);
+        if (total === randomNumber) {
+            // winner()
+            alert("You win");
         winCounter++;
         $("#wins").text("Wins: " + winCounter);
+    }
 
     }
 
     function loser() {
+        if (total > randomNumber) {
+            alert("You lost");
+            lossCounter++;
+            $("#losses").text("Losses: " + lossCounter);
+          
+        }
+    }
+    //     alert("You lost");
+    //     lossCounter++;
+    //     $("#losses").text("Losses: " + lossCounter);
+    // }
+       
 
-        alert("You lost");
-        lossCounter++;
-        $("#losses").text("Losses: " + lossCounter);
-    }
-        if (total === randomNumber) {
-            winner()
-    }
-
-    if (total > randomNumber) {
-        loser()
-    }
+    // if (total > randomNumber) {
+    //     alert("You lost");
+    //     lossCounter++;
+    //     $("#losses").text("Losses: " + lossCounter);
+    //     loser()
+    // }
 
    
 
@@ -169,7 +194,12 @@ $(document).ready(function () {
         console.log(thirdCrystal);
         fourthCrystal = Math.floor(Math.random() * 10);
         console.log(fourthCrystal);
-
+        if (total === randomNumber) {
+            winner()
+        }
+        if (total > randomNumber) {
+            loser()
+        }
     });
     //compare total points to computer random chosen number
 
